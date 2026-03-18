@@ -1,0 +1,144 @@
+:root {
+  color-scheme: light;
+  font-family: "Avenir Next", "Segoe UI", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  background: #ffffff;
+  color: #111111;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background: #ffffff;
+}
+
+button {
+  font: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  padding: 24px 96px 24px 24px;
+}
+
+.app-shell--centered {
+  display: grid;
+  place-items: center;
+}
+
+.message-card {
+  max-width: 420px;
+}
+
+.message-card h1,
+.message-card p {
+  margin: 0;
+}
+
+.message-card p {
+  margin-top: 8px;
+  color: #555555;
+}
+
+.page-list {
+  display: grid;
+  gap: 0;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.page-item {
+  scroll-margin-top: 24px;
+}
+
+.page-item + .page-item {
+  margin-top: 28px;
+  padding-top: 28px;
+  border-top: 1px solid #efefef;
+}
+
+.pdf-canvas {
+  width: 100%;
+}
+
+.pdf-canvas canvas {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.page-nav {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  z-index: 10;
+}
+
+.page-nav__button {
+  width: 40px;
+  height: 40px;
+  border: 1px solid #d7d7d7;
+  border-radius: 999px;
+  background: #ffffff;
+  color: #666666;
+  cursor: pointer;
+  transition:
+    background-color 160ms ease,
+    border-color 160ms ease,
+    color 160ms ease;
+}
+
+.page-nav__button:hover {
+  border-color: #111111;
+  color: #111111;
+}
+
+.page-nav__button--active {
+  border-color: #111111;
+  background: #111111;
+  color: #ffffff;
+}
+
+@media (max-width: 720px) {
+  .app-shell {
+    padding: 16px 72px 16px 16px;
+  }
+
+  .page-list {
+    gap: 0;
+  }
+
+  .page-item + .page-item {
+    margin-top: 20px;
+    padding-top: 20px;
+  }
+
+  .page-nav {
+    top: 16px;
+    right: 16px;
+    gap: 6px;
+  }
+
+  .page-nav__button {
+    width: 36px;
+    height: 36px;
+    font-size: 0.9rem;
+  }
+}
