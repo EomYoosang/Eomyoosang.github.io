@@ -23,9 +23,16 @@ export default function App() {
 
     const loadPages = async () => {
       try {
+        const catalogWithUrls = await Promise.all(
+          pdfCatalog.map(async (entry) => ({
+            ...entry,
+            url: await entry.loadUrl(),
+          })),
+        );
+
         const pageEntries = [];
 
-        for (const entry of pdfCatalog) {
+        for (const entry of catalogWithUrls) {
           const loadingTask = getDocument(entry.url);
           loadingTasks.push(loadingTask);
           const pdf = await loadingTask.promise;

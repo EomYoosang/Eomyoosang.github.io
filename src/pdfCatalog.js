@@ -1,5 +1,4 @@
 const modules = import.meta.glob('../pdf/*.pdf', {
-  eager: true,
   query: '?url',
   import: 'default',
 });
@@ -10,13 +9,13 @@ const collator = new Intl.Collator(undefined, {
 });
 
 export const pdfCatalog = Object.entries(modules)
-  .map(([path, url]) => {
+  .map(([path, loadUrl]) => {
     const filename = path.split('/').pop() ?? path;
 
     return {
       filename,
       title: filename.replace(/\.pdf$/i, ''),
-      url,
+      loadUrl,
     };
   })
   .sort((left, right) => collator.compare(left.filename, right.filename));
