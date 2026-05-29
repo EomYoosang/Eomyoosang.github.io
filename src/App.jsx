@@ -187,6 +187,15 @@ export default function App() {
 
   return (
     <main className="app-shell">
+      <div className="download-bar">
+        <a
+          className="download-button"
+          href="/download/포트폴리오_엄유상.pdf"
+          download="포트폴리오_엄유상.pdf"
+        >
+          ⬇ 포트폴리오 PDF 다운로드
+        </a>
+      </div>
       {status === 'loading' ? (
         <section className="message-card">
           <h1>PDF 페이지를 불러오는 중입니다</h1>

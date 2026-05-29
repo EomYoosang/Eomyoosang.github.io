@@ -35,6 +35,31 @@ button {
   padding: 24px 96px 24px 24px;
 }
 
+.download-bar {
+  display: flex;
+  justify-content: flex-end;
+  max-width: 960px;
+  margin: 0 auto 24px;
+}
+
+.download-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  background: #111111;
+  color: #ffffff;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+.download-button:hover {
+  background: #333333;
+}
+
 .app-shell--centered {
   display: grid;
   place-items: center;
