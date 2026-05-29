@@ -197,10 +197,10 @@ export default function App() {
         </a>
       </div>
       {status === 'loading' ? (
-        <section className="message-card">
-          <h1>PDF 페이지를 불러오는 중입니다</h1>
-          <p>문서 수와 페이지 수를 확인한 뒤 뷰어를 준비합니다.</p>
-        </section>
+        <div className="loading-screen">
+          <div className="loading-screen__spinner" />
+          <p className="loading-screen__text">PDF를 불러오는 중입니다...</p>
+        </div>
       ) : (
         <>
           <aside className="page-nav" aria-label="페이지 이동">

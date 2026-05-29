@@ -203,7 +203,11 @@ export default function PdfCanvas({
 
   return (
     <div className={`pdf-canvas ${className}`.trim()} ref={containerRef}>
-      {!hasRendered ? <div className="pdf-canvas__placeholder" aria-hidden="true" /> : null}
+      {!hasRendered ? (
+        <div className="pdf-canvas__placeholder" aria-hidden="true">
+          <div className="pdf-canvas__spinner" />
+        </div>
+      ) : null}
       <div
         className="pdf-canvas__sheet"
         style={
