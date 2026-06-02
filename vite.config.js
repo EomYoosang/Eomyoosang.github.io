@@ -9,4 +9,5 @@ const base = repositoryName.endsWith('.github.io') ? '/' : `/${repositoryName}/`
 export default defineConfig({
   plugins: [react()],
   base,
+  publicDir: 'static',
 });

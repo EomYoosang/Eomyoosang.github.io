@@ -6,6 +6,9 @@ import { pdfCatalog } from './pdfCatalog';
 
 GlobalWorkerOptions.workerSrc = workerUrl;
 
+const portfolioDownloadUrl = `${import.meta.env.BASE_URL}download/portfolio.pdf`;
+const portfolioDownloadFilename = '엄유상 포트폴리오.pdf';
+
 function formatPageTitle(entry, pageNumber, totalPages) {
   return totalPages === 1 ? entry.title : `${entry.title} · ${pageNumber}`;
 }
@@ -190,8 +193,8 @@ export default function App() {
       <div className="download-bar">
         <a
           className="download-button"
-          href="/download/포트폴리오_엄유상.pdf"
-          download="포트폴리오_엄유상.pdf"
+          href={portfolioDownloadUrl}
+          download={portfolioDownloadFilename}
         >
           ⬇ 포트폴리오 PDF 다운로드
         </a>
